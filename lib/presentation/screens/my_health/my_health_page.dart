@@ -3,7 +3,6 @@ import 'package:gap/gap.dart';
 import 'package:wellwise/presentation/screens/my_health/widgets/bmi_score_widget.dart';
 import 'package:wellwise/presentation/widgets/heart_health.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 class MyHealthPage extends StatefulWidget {
   const MyHealthPage({super.key});
@@ -27,15 +26,17 @@ class _MyHealthPageState extends State<MyHealthPage> {
               Text(
                 'Wellwise',
                 style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 30,
-                    fontFamily: 'Poppins'),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 30,
+                  fontFamily: 'Poppins',
+                ),
               )
             ],
           ),
         )
       ],
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: SingleChildScrollView(
@@ -45,6 +46,7 @@ class _MyHealthPageState extends State<MyHealthPage> {
                   vertical: 16.0,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
@@ -53,7 +55,7 @@ class _MyHealthPageState extends State<MyHealthPage> {
                             text: const TextSpan(
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 24,
+                                fontSize: 20,
                                 fontFamily: 'Poppins',
                                 height: 1.5,
                               ),
@@ -81,32 +83,25 @@ class _MyHealthPageState extends State<MyHealthPage> {
                     const Gap(16),
                     const BmiScore(),
                     const Gap(20),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: RichText(
-                            textAlign: TextAlign.left,
-                            text: const TextSpan(
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 24,
-                                fontFamily: 'Poppins',
-                                height: 1.5,
-                              ),
-                              children: [
-                                TextSpan(text: 'Past '),
-                                TextSpan(
-                                  text: 'Health Score',
-                                  style: TextStyle(
-                                    color: Color(0xFF07CFAB),
-                                  ),
-                                ),
-                              ],
+                    RichText(
+                      textAlign: TextAlign.left,
+                      text: const TextSpan(
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          fontFamily: 'Poppins',
+                          height: 1.5,
+                        ),
+                        children: [
+                          TextSpan(text: 'Past '),
+                          TextSpan(
+                            text: 'Health Score',
+                            style: TextStyle(
+                              color: Color(0xFF07CFAB),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const Gap(16),
                     Card(
@@ -114,7 +109,7 @@ class _MyHealthPageState extends State<MyHealthPage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child:  Container(
+                      child: Container(
                         height: 240,
                         padding: const EdgeInsets.all(10),
                         child: const SfCartesianChart(
@@ -122,6 +117,15 @@ class _MyHealthPageState extends State<MyHealthPage> {
                             isVisible: false,
                           ),
                         ),
+                      ),
+                    ),
+                    const Gap(16),
+                    const Text(
+                      'Scores Breakdown',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins',
                       ),
                     ),
                   ],
