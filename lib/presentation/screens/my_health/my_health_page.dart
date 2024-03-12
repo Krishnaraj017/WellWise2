@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:wellwise/presentation/screens/my_health/widgets/bmi_score_widget.dart';
+import 'package:wellwise/presentation/screens/my_health/widgets/score_breakdown.dart';
 import 'package:wellwise/presentation/widgets/heart_health.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -123,11 +124,13 @@ class _MyHealthPageState extends State<MyHealthPage> {
                     const Text(
                       'Scores Breakdown',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Poppins',
                       ),
                     ),
+                    const Gap(10),
+                    const ScoreBreakdownIndicators()
                   ],
                 ),
               ),
@@ -138,3 +141,4 @@ class _MyHealthPageState extends State<MyHealthPage> {
     );
   }
 }
+

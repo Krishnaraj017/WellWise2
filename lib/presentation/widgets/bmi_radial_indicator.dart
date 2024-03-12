@@ -13,7 +13,9 @@ class BmiRadialIndicator extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.width < 500
+                ? MediaQuery.of(context).size.height * 0.2
+                : 250,
             child: SfRadialGauge(
               title: const GaugeTitle(
                 text: 'Your BMI Score',
@@ -69,8 +71,8 @@ class BmiRadialIndicator extends StatelessWidget {
                       endWidth: 0.4,
                     ),
                   ],
-                  pointers: [
-                    const MarkerPointer(
+                  pointers: const [
+                    MarkerPointer(
                       value: 22.2,
                       markerWidth: 10,
                       markerHeight: 16,
