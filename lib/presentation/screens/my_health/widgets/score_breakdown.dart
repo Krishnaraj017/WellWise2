@@ -26,16 +26,17 @@ class ScoreBreakdownIndicators extends StatelessWidget {
               : 250,
           child: const TotalScoreIndicator(),
         ),
+        const Gap(10.0),
         SizedBox(
-          height: MediaQuery.of(context).size.width < 390 ? 200 : 100,
+          height: MediaQuery.of(context).size.width < 360 ? 200 : 100,
           width: MediaQuery.of(context).size.width,
           child: Align(
             alignment: Alignment.center,
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.zero,
+              shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: MediaQuery.of(context).size.width < 390 ? 2 : 4,
+                crossAxisCount: MediaQuery.of(context).size.width < 360 ? 2 : 4,
                 mainAxisExtent: 100,
               ),
               itemBuilder: (context, index) => _SubScoreIndicator(
@@ -68,6 +69,8 @@ class _SubScoreIndicator extends StatelessWidget {
           height: 60,
           width: 60,
           child: SfRadialGauge(
+            enableLoadingAnimation: true,
+            animationDuration: 3000,
             axes: [
               RadialAxis(
                 interval: 1,

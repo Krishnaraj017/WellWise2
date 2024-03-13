@@ -10,7 +10,7 @@ class TotalScoreIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return SfRadialGauge(
       enableLoadingAnimation: true,
-      animationDuration: 2500,
+      animationDuration: 3000,
       axes: [
         RadialAxis(
           showLabels: false,
