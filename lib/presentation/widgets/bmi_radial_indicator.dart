@@ -113,11 +113,11 @@ class BmiRadialIndicator extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _heightAndWeight(
+              _HeightAndWeight(
                 unit: 'cm',
                 value: 178,
               ),
-              _heightAndWeight(
+              _HeightAndWeight(
                 unit: 'kg',
                 value: 60,
               )
@@ -129,9 +129,8 @@ class BmiRadialIndicator extends StatelessWidget {
   }
 }
 
-class _heightAndWeight extends StatelessWidget {
-  const _heightAndWeight({
-    super.key,
+class _HeightAndWeight extends StatelessWidget {
+  const _HeightAndWeight({
     this.unit,
     this.value,
   });
