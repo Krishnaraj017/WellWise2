@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:wellwise/presentation/screens/my_health/widgets/bmi_score_widget.dart';
+import 'package:wellwise/presentation/screens/my_health/widgets/image_slider.dart';
 import 'package:wellwise/presentation/screens/my_health/widgets/score_breakdown.dart';
 import 'package:wellwise/presentation/widgets/heart_health.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -130,7 +131,8 @@ class _MyHealthPageState extends State<MyHealthPage> {
                       ),
                     ),
                     const Gap(10),
-                    const ScoreBreakdownIndicators()
+                    const ScoreBreakdownIndicators(),
+                    const ImageSlider(),
                   ],
                 ),
               ),
@@ -141,4 +143,3 @@ class _MyHealthPageState extends State<MyHealthPage> {
     );
   }
 }
-
